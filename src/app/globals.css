@@ -1,26 +1,212 @@
 @import "tailwindcss";
+@variant dark (&:is(.dark *));
+@variant slate (&:is(.slate *));
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: theme("colors.stone.50"); /* #f8fafc - very light cool gray */
+  --foreground: theme("colors.zinc.950"); /* #020617 - near-black */
 }
 
-@theme inline {
+.slate {
+  --background: theme("colors.slate.50"); /* #f8fafc - very light cool gray */
+  --foreground: theme("colors.slate.900"); /* #11181c - dark slate */
+}
+
+.dark {
+  --background: theme("colors.zinc.950"); /* #020617 - deep slate */
+  --foreground: theme("colors.zinc.100");
+}
+
+@theme {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-primary: var(--color-blue-600);
+  --color-accent: var(--color-rose-600);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  html,
+  body {
+    scroll-behavior: smooth;
+    max-width: 100vw;
+    overflow-x: hidden;
+    font-family: var(--font-outfit), system-ui, sans-serif;
+    background-color: var(--background);
+    color: var(--foreground);
+  }
+  * {
+    scroll-behavior: smooth;
+    font-family: inherit;
+  }
+
+  /* Chrome, Edge, and Safari */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-zinc-700/50 rounded-full;
+    border: 2px solid transparent;
+    background-clip: padding-box;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-zinc-600;
+  }
+
+  /* Firefox */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: theme("colors.zinc.700") transparent;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer components {
+  .font-type-serif{
+    font-family: var(--font-cormorant), serif;
+  }
+  .btn {
+    @apply transition-transform hover:scale-[1.03] rounded cursor-pointer;
+  }
+  .icon_hover {
+    @apply p-2 rounded-full hover:bg-slate-200 dark:hover:bg-slate-800 cursor-pointer transition-colors;
+  }
+
+  .low-contrast {
+    @apply text-slate-600 dark:text-slate-400;
+  }
+
+  .btn-ghost {
+    @apply relative p-2 rounded-full border border-slate-300/50 dark:border-slate-700/50 hover:border-slate-400 dark:hover:border-slate-600 bg-transparent hover:bg-slate-100/50 dark:hover:bg-slate-800/50 transition-all duration-300 hover:scale-110 backdrop-blur-sm;
+  }
+  .btn-ghost-icon {
+    @apply relative w-4.5 h-4.5;
+  }
+  .btn-ghost-glow {
+    @apply absolute inset-0 rounded-full bg-linear-to-br from-amber-500/0 to-indigo-500/0 group-hover:from-amber-500/10 group-hover:to-indigo-500/10 dark:group-hover:from-indigo-500/10 dark:group-hover:to-amber-500/10 transition-all duration-300 -z-10;
+  }
+  .tooltip {
+    @apply absolute -bottom-12 left-1/2 -translate-x-1/2 px-3 py-1.5 text-xs font-medium text-slate-700 dark:text-slate-300 bg-white/90 dark:bg-slate-800/90 border border-slate-200 dark:border-slate-700 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none whitespace-nowrap backdrop-blur-sm shadow-lg;
+  }
+  .global-padding {
+    padding-left: clamp(1rem, 5vw, 6.25rem);
+    padding-right: clamp(1rem, 5vw, 6.25rem);
+    width: 100%;
+  }
+  .page {
+    @apply min-h-screen pt-25 bg-slate-100 dark:bg-slate-950; /* Updated to slate */
+  }
+  .title {
+    @apply text-3xl lg:text-4xl xl:text-5xl font-bold dark:text-slate-50 max-w-md lg:max-w-lg;
+  }
+  .subtitle {
+    @apply mt-3 text-slate-600 dark:text-slate-400 max-w-lg mb-8;
+  }
+
+
+  lite-youtube {
+    max-width: 100% !important;
+    width: 100% !important;
+    height: 100% !important;
+  }
 }
+
+@utility no-scrollbar {
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.logo-loader {
+  animation: appear 0.2s linear forwards;
+  animation-delay: 2.6s ;
+}
+
+@property --fill {
+  syntax: '<angle>';
+  inherits: false;
+  initial-value: 0deg;
+}
+
+.loader-spinner {
+  isolation: isolate;
+  position: relative;
+  animation: hide 1.9s linear forwards;
+}
+.loader-spinner::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  margin: -5px;
+  z-index: -1;
+  background-image: conic-gradient(from var(--fill), transparent 80%, var(--color-rose-600));
+  animation: flow 1.2s linear infinite;
+}
+
+.loader-spinner::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background-color: var(--loader-bg); /* ← CSS variable instead of hardcoded */
+}
+
+.animate-move-arrow {
+  animation: moveArrow 1s linear;
+  animation-play-state: paused;
+}
+
+.group:hover .animate-move-arrow {
+  animation-play-state: running;
+}
+
+@keyframes moveArrow {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes flow {
+  from {
+    --fill: 0deg;
+  }
+  to {  
+    --fill: 360deg;
+  }
+}
+
+@keyframes hide {
+  0% {
+    opacity: 1;
+    visibility: visible;
+  }
+  80% {
+    opacity: 1;
+    visibility: visible;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+    display: none;
+  }
+}
+@keyframes appear {
+  0% {
+    opacity: 0;
+    display: none;
+  }
+  100% {
+    opacity: 100;
+    display: block;
+  }
+}
+

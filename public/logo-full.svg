@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 914.84 160.56">
+  <defs>
+    <style>
+      .cls-1 {
+        letter-spacing: -.02em;
+      }
+
+      .cls-2 {
+        fill: #ee3748;
+        stroke: #ee3748;
+      }
+
+      .cls-2, .cls-3 {
+        stroke-miterlimit: 10;
+      }
+
+      .cls-4 {
+        letter-spacing: -.01em;
+      }
+
+      .cls-5 {
+        letter-spacing: 0em;
+      }
+
+      .cls-6 {
+        letter-spacing: 0em;
+      }
+
+      .cls-7 {
+        letter-spacing: 0em;
+      }
+
+      .cls-8 {
+        letter-spacing: 0em;
+      }
+
+      .cls-3 {
+        stroke: #231f20;
+      }
+
+      .cls-3, .cls-9 {
+        fill: #231f20;
+      }
+
+      .cls-10 {
+        letter-spacing: 0em;
+      }
+
+      .cls-11 {
+        letter-spacing: .03em;
+      }
+
+      .cls-12 {
+        letter-spacing: -.07em;
+      }
+
+      .cls-13 {
+        letter-spacing: 0em;
+      }
+
+      .cls-9 {
+        font-family: MinionConceptRoman-Semibold, 'Minion Variable Concept';
+        font-size: 107.75px;
+        font-variation-settings: 'wght' 600, 'opsz' 11;
+        font-weight: 600;
+      }
+
+      .cls-14 {
+        letter-spacing: 0em;
+      }
+    </style>
+  </defs>
+  <g id="Layer_1-2" data-name="Layer 1">
+    <g>
+      <path class="cls-2" d="M138.13,45.58c-4.95-.47-10.01-.87-15.17-1.21l-29.7-29.7-28.88,28.88c-4.97.17-9.86.41-14.67.71L93.26.71l44.87,44.87Z"/>
+      <path class="cls-2" d="M157.9,93.27l-26.55,26.55c-4.89.4-9.88.73-14.96,1.01l27.56-27.56-44.87-44.87-5.81-5.81-.63.63-5.01,5.01-45.03,45.04,28.18,28.18c-4.91-.12-9.74-.3-14.5-.53l-27.65-27.65,44.91-44.9,5.14-5.15,14.59-14.59,14.98,14.98,5.38,5.38,44.27,44.27Z"/>
+      <path class="cls-2" d="M14.67,93.27l20.82,20.82c-5.51-.57-10.83-1.24-15.95-1.99L.71,93.27l43.35-43.35c4.87-.41,9.88-.75,14.98-1.01L14.67,93.27Z"/>
+      <path class="cls-3" d="M185.82,93.27l-15.46,15.45h0c-5.35,1.14-11.04,2.17-17.04,3.09l18.54-18.54-43.2-43.2c5.38.47,10.6,1.03,15.64,1.67l41.53,41.53Z"/>
+    </g>
+    <text class="cls-9" transform="translate(185.82 121.45)"><tspan class="cls-1" x="0" y="0">I</tspan><tspan class="cls-14" x="38.04" y="0">y</tspan><tspan x="88.24" y="0">a</tspan><tspan class="cls-10" x="138.45" y="0">l</tspan><tspan class="cls-6" x="168.51" y="0">o</tspan><tspan class="cls-10" x="226.16" y="0">d</tspan><tspan x="285.53" y="0">e </tspan><tspan class="cls-12" x="357.61" y="0">T</tspan><tspan class="cls-8" x="419.35" y="0">a</tspan><tspan class="cls-5" x="469.34" y="0">o</tspan><tspan class="cls-7" x="525.8" y="0">fi</tspan><tspan class="cls-11" x="587.54" y="0">k</tspan><tspan class="cls-4" x="645.29" y="0">a</tspan><tspan class="cls-13" x="693.99" y="0">t</tspan></text>
+  </g>
+</svg>
